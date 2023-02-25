@@ -23,15 +23,17 @@ public class Main {
             }
             scanner.close();
             scanner2.close();
+
             for(int i = 0; i < contrastes.size(); i++) {
                 String contraste = contrastes.get(i);
                 String OS = contraste.substring(0,7);
-                String ruta = "\\\\192.168.1.2\\img\\2021\\JUN\\ENDESA\\33333333333\\" + OS + "\\" + contraste + ".gif";
+                String ruta = "\\\\192.168.1.2\\img\\2023\\ENE\\ENDESA\\33333333333\\" + OS + "\\" + contraste + ".gif";
                 try {
-                    copyFileUsingJava(new File(ruta), new File("D:/Muestra/SUM " + suministros.get(i) + ".gif"));
-                    System.out.println(i+1 + ". Se copió " + contraste + ".gif en D:/Muestra/");
+                    copyFileUsingJava(new File(ruta), new File("D:\\Muestra\\SUM " + suministros.get(i) + ".gif"));
+                    System.out.println(i+1 + ". Se copió " + contraste + ".gif en D:\\Muestra\\");
                 } catch (IOException ex) {
-                    System.out.println(ex.toString());
+//                    System.out.println(ex);
+                    System.out.println("No se ubicó " + contraste);
                 }
             }
             //System.out.println(rutas.get(3));
